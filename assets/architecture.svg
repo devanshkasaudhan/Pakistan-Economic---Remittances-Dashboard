@@ -1,0 +1,77 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <!-- CSS Styles -->
+  <style>
+    .node rect { stroke: #333; stroke-width: 2px; rx: 8px; }
+    .node text { font-family: Arial, sans-serif; font-size: 15px; font-weight: bold; fill: #fff; text-anchor: middle; dominant-baseline: middle; }
+    .node-subtext { font-family: Arial, sans-serif; font-size: 13px; font-weight: normal; fill: #eee; text-anchor: middle; }
+    .line { stroke: #666; stroke-width: 2.5px; fill: none; }
+    .arrow { fill: #666; }
+    .label { font-family: Arial, sans-serif; font-size: 13px; font-weight: bold; fill: #444; }
+    
+    .bg-user { fill: #6366f1; }
+    .bg-ui { fill: #10b981; }
+    .bg-api { fill: #8b5cf6; }
+    .bg-data { fill: #f59e0b; }
+    .bg-model { fill: #ec4899; }
+  </style>
+
+  <!-- User Node -->
+  <g class="node" transform="translate(300, 20)">
+    <rect class="bg-user" width="200" height="50" />
+    <text x="100" y="27">User / Web Browser</text>
+  </g>
+
+  <!-- UI Node -->
+  <g class="node" transform="translate(300, 130)">
+    <rect class="bg-ui" width="200" height="60" />
+    <text x="100" y="22">Dashboard UI</text>
+    <text class="node-subtext" x="100" y="44">Streamlit (:8501)</text>
+  </g>
+
+  <!-- Data Node -->
+  <g class="node" transform="translate(80, 260)">
+    <rect class="bg-data" width="200" height="60" />
+    <text x="100" y="22">Economic Dataset</text>
+    <text class="node-subtext" x="100" y="44">.csv files</text>
+  </g>
+
+  <!-- API Node -->
+  <g class="node" transform="translate(520, 260)">
+    <rect class="bg-api" width="200" height="60" />
+    <text x="100" y="22">ML Engine API</text>
+    <text class="node-subtext" x="100" y="44">FastAPI (:8000)</text>
+  </g>
+
+  <!-- Models Node -->
+  <g class="node" transform="translate(520, 370)">
+    <rect class="bg-model" width="200" height="60" />
+    <text x="100" y="22">Pretrained RF Models</text>
+    <text class="node-subtext" x="100" y="44">.pkl binary</text>
+  </g>
+
+  <!-- Edges -->
+  <!-- User to UI -->
+  <line class="line" x1="400" y1="70" x2="400" y2="120" />
+  <polygon class="arrow" points="395,120 405,120 400,130" />
+  <rect x="410" y="82" width="125" height="20" fill="white" rx="3"/>
+  <text class="label" x="415" y="97">HTTP Web Traffic</text>
+
+  <!-- UI to Data -->
+  <path class="line" d="M 330 190 L 330 215 L 180 215 L 180 250" />
+  <polygon class="arrow" points="175,250 185,250 180,260" />
+  <rect x="200" y="200" width="100" height="20" fill="white" rx="3"/>
+  <text class="label" x="205" y="215">Loads Metrics</text>
+
+  <!-- UI to API -->
+  <path class="line" d="M 470 190 L 470 215 L 620 215 L 620 250" />
+  <polygon class="arrow" points="615,250 625,250 620,260" />
+  <rect x="500" y="200" width="95" height="20" fill="white" rx="3"/>
+  <text class="label" x="505" y="215">REST Polling</text>
+
+  <!-- API to Models -->
+  <line class="line" x1="620" y1="320" x2="620" y2="360" />
+  <polygon class="arrow" points="615,360 625,360 620,370" />
+  <rect x="635" y="325" width="125" height="20" fill="white" rx="3"/>
+  <text class="label" x="640" y="340">In-Memory Cache</text>
+
+</svg>
