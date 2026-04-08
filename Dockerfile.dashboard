@@ -1,0 +1,15 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# It is best practice to decouple requirements, but we install specifically what the UI uses here
+RUN pip install --no-cache-dir streamlit pandas plotly requests statsmodels
+
+# Copy project files securely
+COPY data/ ./data/
+COPY dashboard/ ./dashboard/
+
+EXPOSE 8501
+
+# Run the app and ensure binding 0.0.0.0 internally
+CMD ["streamlit", "run", "dashboard/app.py", "--server.address=0.0.0.0"]

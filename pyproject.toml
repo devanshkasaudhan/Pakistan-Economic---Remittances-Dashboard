@@ -1,0 +1,19 @@
+[project]
+name = "kubernets-for-simple-ml-project"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.135.3",
+    "joblib>=1.5.3",
+    "matplotlib>=3.10.8",
+    "pandas>=3.0.2",
+    "plotly>=6.6.0",
+    "requests>=2.33.1",
+    "scikit-learn>=1.8.0",
+    "seaborn>=0.13.2",
+    "statsmodels>=0.14.6",
+    "streamlit>=1.56.0",
+    "uvicorn>=0.44.0",
+]
